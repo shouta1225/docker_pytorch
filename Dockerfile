@@ -19,8 +19,14 @@ RUN pip install tqdm
 RUN apt install sqlite3
 
 #Ubuntu環境を日本語化
-RUN apt install language-pack-ja
-RUN update-locale LANG=ja_JP.UTF8
+RUN apt install -y language-pack-ja \
+&& apt-get install -y locales \
+&& locale-gen ja_JP.UTF-8 \
+&& echo "export LANG=ja_JP.UTF-8" >> ~/.bashrc
+
+ENV LANG ja_JP.UTF-8
+ENV LANGUAGE ja_JP:ja
+ENV LC_ALL=ja_JP.UTF-8
 
 
 
