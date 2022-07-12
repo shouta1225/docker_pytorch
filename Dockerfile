@@ -21,6 +21,8 @@ RUN apt install sqlite3
 #mysql2sqlieteをダウンロード
 RUN git clone https://github.com/dumblog/mysql2sqlite
 
+#wikipedia-apiのインストール
+RUN pip3 install wikipedia-api
 
 #Ubuntu環境を日本語化
 RUN apt install -y language-pack-ja \
