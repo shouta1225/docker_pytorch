@@ -18,6 +18,10 @@ RUN pip install tqdm
 #sqlite3のインストール
 RUN apt install sqlite3
 
+#mysql2sqlieteをダウンロード
+RUN git clone https://github.com/dumblog/mysql2sqlite
+
+
 #Ubuntu環境を日本語化
 RUN apt install -y language-pack-ja \
 && apt-get install -y locales \
